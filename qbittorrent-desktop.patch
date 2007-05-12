@@ -1,0 +1,9 @@
+--- src/Icons/qBittorrent_old.desktop	2007-04-03 21:57:30.000000000 +0000
++++ src/Icons/qBittorrent.desktop	2007-05-01 22:11:24.018877811 +0000
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-Categories=Qt;Application;Network;P2P
++Categories=Qt;Network;FileTransfer;
+ Comment=V0.9.1
+ Encoding=UTF-8
+ Exec=qbittorrent
