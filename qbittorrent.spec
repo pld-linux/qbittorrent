@@ -1,16 +1,17 @@
 Summary:	qbittorrent - Qt4-based torrent client
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
-Version:	0.9.1
+Version:	0.9.3
 Release:	0.1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	ee5a0ee8677d09569355195f8b2e55a9
+# Source0-md5:	b1f12106dd8b33c5280df5e02f0e9abf
 Patch0:		%{name}-desktop.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
+BuildRequires:	QtNetwork-devel
 BuildRequires:	boost-date_time-devel
 BuildRequires:	boost-devel
 BuildRequires:	boost-filesystem-devel
@@ -30,7 +31,7 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 
 %prep
 %setup -q
-%patch0 -p0
+%patch0 -p1
 
 %build
 ./configure \
