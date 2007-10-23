@@ -12,14 +12,20 @@ URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
+BuildRequires:	boost-array-devel
+BuildRequires:	boost-bind-devel
+BuildRequires:	boost-call_traits-devel
 BuildRequires:	boost-date_time-devel
 BuildRequires:	boost-devel
 BuildRequires:	boost-filesystem-devel
+BuildRequires:	boost-thread-devel
 BuildRequires:	curl-devel
+BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	rb_libtorrent-devel >= 0.12
 BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	which
 Requires:	python >= 1:2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,7 +41,7 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 
 %build
 ./configure \
-	--prefix=/usr
+	--prefix=%{_prefix}
 %{__make}
 
 %install
