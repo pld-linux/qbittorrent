@@ -12,13 +12,7 @@ URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
-BuildRequires:	boost-array-devel
-BuildRequires:	boost-bind-devel
-BuildRequires:	boost-call_traits-devel
-BuildRequires:	boost-date_time-devel
-BuildRequires:	boost-devel
-BuildRequires:	boost-filesystem-devel
-BuildRequires:	boost-thread-devel
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	curl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
