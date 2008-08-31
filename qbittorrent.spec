@@ -1,24 +1,27 @@
 Summary:	qbittorrent - Qt4-based torrent client
+Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
-Version:	1.0.0
+Version:	1.1.3
 Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	e31fe47590dfa48c52d0e35d4627d630
-Patch0:		%{name}-desktop.patch
+# Source0-md5:	8199758f8ded38d0311b098f282c0733
+## in the 1.36 boost some things changed
+Patch1:		%{name}-boost.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
+BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	curl-devel
+BuildRequires:	libtorrent-rasterbar-devel >= 0.13.1
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
-BuildRequires:	rb_libtorrent-devel >= 0.12
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
 Requires:	python >= 1:2.3
@@ -27,14 +30,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 qTorrent - Qt4-based torrent client.
 
+%description -l hu.UTF-8
+qBittorrent - Qt4-alapú torrent kliens
+
 %description -l pl.UTF-8
 qTorrent - graficzny klient torrenta oparty na Qt4.
 
 %prep
 %setup -q
-%patch0 -p1
+# %patch0 -p1
+%patch1 -p1
 
 %build
+# cd src
+# tar xf %{SOURCE1} --wildcards "*include/*" --transform="s|asio-1.0.0/include||"
+# cd ..
 ./configure \
 	--prefix=%{_prefix}
 %{__make}
