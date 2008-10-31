@@ -14,7 +14,7 @@ BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
-BuildRequires:	boost-devel >= 1.35.0
+BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	curl-devel
 BuildRequires:	libtorrent-rasterbar-devel >= 0.13.1
 BuildRequires:	pkgconfig
