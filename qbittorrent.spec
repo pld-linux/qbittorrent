@@ -15,6 +15,7 @@ BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
+BuildRequires:	boost-asio
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	curl-devel
 BuildRequires:	libtorrent-rasterbar-devel >= 0.13.1
@@ -40,7 +41,7 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 
 %build
 ./configure \
-	--prefix=%{_prefix} 
+	--prefix=%{_prefix}
 %{__make}
 
 %install
