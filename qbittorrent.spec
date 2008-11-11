@@ -10,16 +10,16 @@ License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
 # Source0-md5:	c43f1e23a91858a9bafda3b7a08decfa  
+Patch0:		%{name}-libtorrent14.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
-BuildRequires:	boost-asio
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	curl-devel
-BuildRequires:	libtorrent-rasterbar-devel >= 0.13.1
+BuildRequires:	libtorrent-rasterbar-devel >= 0.14
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
@@ -39,6 +39,7 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 ./configure \
