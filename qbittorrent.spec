@@ -10,12 +10,10 @@ Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
 # Source0-md5:	22ed5e6713a319cc71997f4243888f8e
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
-BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	boost-devel >= 1.36.0
-BuildRequires:	curl-devel
 BuildRequires:	libtorrent-rasterbar-devel >= 0.14.4
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
