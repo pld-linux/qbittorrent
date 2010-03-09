@@ -1,5 +1,5 @@
 #
-%define		_rc	rc1
+%define		_rc	rc2
 Summary:	qbittorrent - Qt4-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
@@ -9,7 +9,7 @@ Release:	0.%{_rc}.1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}%{_rc}.tar.gz
-# Source0-md5:	cf2a3d95e9d2d5f14456287b44d0a2c6
+# Source0-md5:	62946bf2b251d88044fdc9622c546ae4
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtDBus-devel
