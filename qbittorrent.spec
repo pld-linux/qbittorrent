@@ -14,6 +14,8 @@ BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	boost-devel >= 1.36.0
+# Warning: libtorrent-rasterbar v0.14.9 was detected. Some feature will be disabled because they require v0.15.0.
+# so >= 0.15.0 ?
 BuildRequires:	libtorrent-rasterbar-devel >= 0.14.4
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
@@ -38,6 +40,13 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 %build
 ./configure \
 	--prefix=%{_prefix}
+#
+#!!!!! should we use instead of configure?
+#
+# qmake-qt4 \
+#	QMAKE_CXX="%{__cxx}" \
+#	QMAKE_CXXFLAGS_RELEASE="%{rpmcxxflags}"
+#
 %{__make}
 
 %install
