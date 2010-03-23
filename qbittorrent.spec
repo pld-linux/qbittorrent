@@ -2,21 +2,19 @@ Summary:	qbittorrent - Qt4-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
-Version:	2.2.1
+Version:	2.2.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	0aa86b57eb1b622a6d2dc06dcbaf6177
+# Source0-md5:	780fc2a9e41b488123bae2e5911e786b
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	boost-devel >= 1.36.0
-# Warning: libtorrent-rasterbar v0.14.9 was detected. Some feature will be disabled because they require v0.15.0.
-# so >= 0.15.0 ?
-BuildRequires:	libtorrent-rasterbar-devel >= 0.14.4
+BuildRequires:	libtorrent-rasterbar-devel >= 0.15.0
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
@@ -38,15 +36,10 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 %setup -q
 
 %build
-./configure \
-	--prefix=%{_prefix}
-#
-#!!!!! should we use instead of configure?
-#
-# qmake-qt4 \
-#	QMAKE_CXX="%{__cxx}" \
-#	QMAKE_CXXFLAGS_RELEASE="%{rpmcxxflags}"
-#
+qmake-qt4 \
+	QMAKE_CXX="%{__cxx}" \
+	QMAKE_CXXFLAGS_RELEASE="%{rpmcxxflags}"
+
 %{__make}
 
 %install
