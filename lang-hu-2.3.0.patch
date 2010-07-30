@@ -1,0 +1,11 @@
+--- qbittorrent-2.3.0/src/lang/qbittorrent_hu.ts~	2010-07-27 10:03:38.000000000 +0200
++++ qbittorrent-2.3.0/src/lang/qbittorrent_hu.ts	2010-07-30 10:53:03.001689324 +0200
+@@ -3763,7 +3763,7 @@
+     <message>
+         <location filename="../ui/options.ui" line="342"/>
+         <source>Action on double-click</source>
+-        <translation>Dupla kett esetén</translation>
++        <translation>Dupla katt esetén</translation>
+     </message>
+     <message>
+         <location filename="../ui/options.ui" line="354"/>
