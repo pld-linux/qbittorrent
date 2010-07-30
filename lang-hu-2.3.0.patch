@@ -1,5 +1,5 @@
---- qbittorrent-2.3.0/src/lang/qbittorrent_hu.ts~	2010-07-27 10:03:38.000000000 +0200
-+++ qbittorrent-2.3.0/src/lang/qbittorrent_hu.ts	2010-07-30 10:53:03.001689324 +0200
+--- qbittorrent-2.3.0-orig/src/lang/qbittorrent_hu.ts	2010-07-27 10:03:38.000000000 +0200
++++ qbittorrent-2.3.0/src/lang/qbittorrent_hu.ts	2010-07-30 15:39:17.479402618 +0200
 @@ -3763,7 +3763,7 @@
      <message>
          <location filename="../ui/options.ui" line="342"/>
@@ -9,3 +9,12 @@
      </message>
      <message>
          <location filename="../ui/options.ui" line="354"/>
+@@ -3837,7 +3837,7 @@
+     <message>
+         <location filename="../ui/options.ui" line="635"/>
+         <source>Append the label of the torrent to the save path</source>
+-        <translation>A címke hozzfűzése a letöltési könyvtár nevéhez</translation>
++        <translation>A címke hozzáfűzése a letöltési könyvtár nevéhez</translation>
+     </message>
+     <message>
+         <location filename="../ui/options.ui" line="645"/>
