@@ -22,7 +22,7 @@ BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
-Requires:	libtorrent-rasterbar
+Requires:	libtorrent-rasterbar > 1:0.15.0
 Requires:	python >= 1:2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
