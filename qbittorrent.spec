@@ -16,12 +16,13 @@ BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	boost-devel >= 1.36.0
-BuildRequires:	libtorrent-rasterbar-devel > 1:0.15.0
+BuildRequires:	libtorrent-rasterbar-devel >= 1:0.14.4
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
+Requires:	libtorrent-rasterbar
 Requires:	python >= 1:2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
