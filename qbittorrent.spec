@@ -12,16 +12,16 @@ Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}%{_beta}
 Patch0:		lang-hu-2.3.0.patch
 Patch1:		%{name}-syntax.patch
 URL:		http://qbittorrent.sourceforge.net/
-BuildRequires:	QtCore-devel
-BuildRequires:	QtDBus-devel
-BuildRequires:	QtGui-devel
-BuildRequires:	QtNetwork-devel
-BuildRequires:	QtXml-devel
+BuildRequires:	QtCore-devel >= 4.4.0
+BuildRequires:	QtDBus-devel >= 4.4.0
+BuildRequires:	QtGui-devel >= 4.4.0
+BuildRequires:	QtNetwork-devel >= 4.4.0
+BuildRequires:	QtXml-devel >= 4.4.0
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	libtorrent-rasterbar-devel > 1:0.15.0
 BuildRequires:	pkgconfig
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= 4.4.0
+BuildRequires:	qt4-qmake >= 4.4.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
 Requires:	libtorrent-rasterbar > 1:0.15.0
