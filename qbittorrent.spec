@@ -2,25 +2,25 @@ Summary:	qbittorrent - Qt4-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
-Version:	2.4.11
+Version:	2.5.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	f972e46ec7664c8626c449a47d97da50
+# Source0-md5:	0eeea0a51d42e1e051a8dc673a55f7c0
 Patch0:		lang-hu-2.3.0.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	GeoIP-devel
-BuildRequires:	QtCore-devel
-BuildRequires:	QtDBus-devel
-BuildRequires:	QtGui-devel
-BuildRequires:	QtNetwork-devel
-BuildRequires:	QtXml-devel
+BuildRequires:	QtCore-devel >= 4.4.0
+BuildRequires:	QtDBus-devel >= 4.4.0
+BuildRequires:	QtGui-devel >= 4.4.0
+BuildRequires:	QtNetwork-devel >= 4.4.0
+BuildRequires:	QtXml-devel >= 4.4.0
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	libtorrent-rasterbar-devel > 1:0.15.0
 BuildRequires:	pkgconfig
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= 4.4.0
+BuildRequires:	qt4-qmake >= 4.4.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
 Requires:	libtorrent-rasterbar > 1:0.15.0
