@@ -1,5 +1,5 @@
 
-%define		_beta	beta1
+%define		_beta	beta2
 
 Summary:	qbittorrent - Qt4-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
@@ -10,7 +10,7 @@ Release:	0.%{_beta}.1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}%{_beta}.tar.gz
-# Source0-md5:	41b79984f51eb4ac043bee910c811de1
+# Source0-md5:	acee8a4095266eb983e660a4622e5066
 Patch0:		lang-hu-2.3.0.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	GeoIP-devel
