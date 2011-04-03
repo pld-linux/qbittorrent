@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	qsa		# build with system QtSingleApplication (unfinished)
+%bcond_without	qsa		# build with bundled QtSingleApplication
 
 %define		qtver	4.5
 Summary:	qbittorrent - Qt4-based torrent client
@@ -8,7 +8,7 @@ Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
 Version:	2.7.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
@@ -20,7 +20,7 @@ BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
 BuildRequires:	QtNetwork-devel >= %{qtver}
-%{?with_qsa:BuildRequires:	QtSingleApplication-devel}
+%{?with_qsa:BuildRequires:	QtSingleApplication-devel >= 2.6-5}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.36.0
