@@ -3,16 +3,17 @@
 %bcond_without	qsa		# build with bundled QtSingleApplication
 #
 %define		qtver	4.5
+%define		_pre	beta2
 Summary:	qbittorrent - Qt4-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
-Version:	2.7.2
-Release:	2
+Version:	2.8.0
+Release:	0.%{_pre}.1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	0ebd9ff8a0963b5cc7092f328d6df105
+Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}%{_pre}.tar.gz
+# Source0-md5:	6e3884183ca89ece7d5902c98b5aa033
 Patch0:		lang-hu-2.3.0.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	GeoIP-devel
@@ -25,13 +26,13 @@ BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	libnotify-devel >= 0.4.2
-BuildRequires:	libtorrent-rasterbar-devel >= 1:0.15.5
+BuildRequires:	libtorrent-rasterbar-devel >= 1:0.15.6
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
-Requires:	libtorrent-rasterbar >= 1:0.15.5
+Requires:	libtorrent-rasterbar >= 1:0.15.6
 Requires:	python >= 1:2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,7 +46,7 @@ qBittorrent - Qt4-alapú torrent kliens
 qTorrent - graficzny klient torrenta oparty na Qt4.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}%{_pre}
 %patch0 -p1
 
 %if %{with qsa}
