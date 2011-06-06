@@ -25,13 +25,13 @@ BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	libnotify-devel >= 0.4.2
-BuildRequires:	libtorrent-rasterbar-devel >= 1:0.15.5
+BuildRequires:	libtorrent-rasterbar-devel >= 1:0.15.6
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
-Requires:	libtorrent-rasterbar >= 1:0.15.5
+Requires:	libtorrent-rasterbar >= 1:0.15.6
 Requires:	python >= 1:2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
