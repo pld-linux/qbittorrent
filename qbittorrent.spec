@@ -7,12 +7,12 @@ Summary:	qbittorrent - Qt4-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
-Version:	2.8.5
-Release:	2
+Version:	2.9.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	5f081231537d53e4295483eb9a8f94b1
+# Source0-md5:	a13e199ebbc3411688683e587814d6aa
 Patch0:		lang-hu-2.3.0.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	GeoIP-devel
@@ -25,14 +25,14 @@ BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	libnotify-devel >= 0.4.2
-BuildRequires:	libtorrent-rasterbar-devel >= 1:0.15.7
+BuildRequires:	libtorrent-rasterbar-devel >= 1:0.15.8
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
-Requires:	libtorrent-rasterbar >= 1:0.15.7
 Requires:	desktop-file-utils
+Requires:	libtorrent-rasterbar >= 1:0.15.8
 Requires:	python >= 1:2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
