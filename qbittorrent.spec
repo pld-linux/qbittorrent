@@ -8,12 +8,13 @@ Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
 Version:	3.0.10
-Release:	0.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
 # Source0-md5:	f13c9416524fce8297b41caeadb04f1e
 Patch0:		lang-hu-2.3.0.patch
+Patch1:		cxx.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	GeoIP-devel
 BuildRequires:	QtCore-devel >= %{qtver}
@@ -48,6 +49,7 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %if %{with qsa}
 %{__rm} -r src/qtsingleapp

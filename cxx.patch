@@ -1,0 +1,11 @@
+--- qbittorrent-3.0.10/src/main.cpp.orig	2013-07-14 16:17:31.884993352 +0200
++++ qbittorrent-3.0.10/src/main.cpp	2013-07-14 16:17:49.891818931 +0200
+@@ -207,7 +207,7 @@
+       qDebug("Message: %s", qPrintable(message));
+       app.sendMessage(message);
+     } else { // Raise main window
+-      app.sendMessage("qbt://show");
++      app.sendMessage(QString("qbt://show"));
+     }
+     return 0;
+   }
