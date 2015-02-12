@@ -30,6 +30,7 @@ BuildRequires:	libtorrent-rasterbar-devel >= 1:0.15.9
 BuildRequires:	libtorrent-rasterbar-devel <= 1:0.16.17
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-linguist >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
