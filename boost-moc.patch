@@ -1,0 +1,87 @@
+--- qbittorrent-3.1.11/src/qtlibtorrent/qbtsession.h.orig	2015-02-19 22:16:34.767200481 +0100
++++ qbittorrent-3.1.11/src/qtlibtorrent/qbtsession.h	2015-02-19 22:12:45.290535475 +0100
+@@ -43,9 +43,11 @@
+ #include <QTimer>
+ #include <QNetworkCookie>
+ 
++#ifndef Q_MOC_RUN
+ #include <libtorrent/version.hpp>
+ #include <libtorrent/session.hpp>
+ #include <libtorrent/ip_filter.hpp>
++#endif
+ 
+ #include "qtracker.h"
+ #include "qtorrenthandle.h"
+--- qbittorrent-3.1.11/src/qtlibtorrent/filterparserthread.h~	2014-10-22 21:45:31.000000000 +0200
++++ qbittorrent-3.1.11/src/qtlibtorrent/filterparserthread.h	2015-02-19 22:18:32.677199626 +0100
+@@ -37,8 +37,10 @@
+ #include <QStringList>
+ #include <QHostAddress>
+ 
++#ifndef Q_MOC_RUN
+ #include <libtorrent/session.hpp>
+ #include <libtorrent/ip_filter.hpp>
++#endif
+ 
+ using namespace std;
+ 
+--- qbittorrent-3.1.11/src/preferences/options_imp.cpp~	2014-10-22 21:45:31.000000000 +0200
++++ qbittorrent-3.1.11/src/preferences/options_imp.cpp	2015-02-19 22:19:55.923865690 +0100
+@@ -38,7 +38,9 @@
+ #include <QTranslator>
+ #include <QDesktopServices>
+ 
++#ifndef Q_MOC_RUN
+ #include <libtorrent/version.hpp>
++#endif
+ 
+ #include "options_imp.h"
+ #include "preferences.h"
+--- qbittorrent-3.1.11/src/preferences/options_imp.h~	2014-10-22 21:45:31.000000000 +0200
++++ qbittorrent-3.1.11/src/preferences/options_imp.h	2015-02-19 22:20:37.453865390 +0100
+@@ -32,7 +32,9 @@
+ #define OPTIONS_IMP_H
+ 
+ #include "ui_options.h"
++#ifndef Q_MOC_RUN
+ #include <libtorrent/ip_filter.hpp>
++#endif
+ 
+ // actions on double-click on torrents
+ enum DoubleClickAction {TOGGLE_PAUSE, OPEN_DEST, NO_ACTION};
+--- qbittorrent-3.1.11/src/properties/peeraddition.h~	2014-10-22 21:45:31.000000000 +0200
++++ qbittorrent-3.1.11/src/properties/peeraddition.h	2015-02-19 22:22:30.387197906 +0100
+@@ -36,7 +36,9 @@
+ #include <QMessageBox>
+ #include <QHostAddress>
+ #include "ui_peer.h"
++#ifndef Q_MOC_RUN
+ #include <libtorrent/session.hpp>
++#endif
+ 
+ #include <boost/version.hpp>
+ #if BOOST_VERSION < 103500
+--- qbittorrent-3.1.11/src/geoip/geoipmanager.h~	2014-10-22 21:45:31.000000000 +0200
++++ qbittorrent-3.1.11/src/geoip/geoipmanager.h	2015-02-19 22:24:06.623863876 +0100
+@@ -31,7 +31,9 @@
+ #ifndef GEOIPMANAGER_H
+ #define GEOIPMANAGER_H
+ 
++#ifndef Q_MOC_RUN
+ #include <libtorrent/session.hpp>
++#endif
+ #include <QString>
+ #include <QIcon>
+ 
+--- qbittorrent-3.1.11/src/trackerlogin.h~	2014-10-22 21:45:31.000000000 +0200
++++ qbittorrent-3.1.11/src/trackerlogin.h	2015-02-19 22:25:55.037196425 +0100
+@@ -33,7 +33,9 @@
+ 
+ #include <QDialog>
+ #include <QMessageBox>
++#ifndef Q_MOC_RUN
+ #include <libtorrent/session.hpp>
++#endif
+ #include "ui_login.h"
+ #include "qtorrenthandle.h"
+ 
