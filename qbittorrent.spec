@@ -14,7 +14,7 @@ Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
 # Source0-md5:	e058c999877317da3cc30d86782b0f54
 Patch0:		lang-hu-2.3.0.patch
-Patch1:		boost-moc.patch
+Patch1:		qmake.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	GeoIP-devel
 BuildRequires:	QtCore-devel >= %{qtver}
@@ -56,10 +56,12 @@ qTorrent - graficzny klient torrenta oparty na Qt4.
 %endif
 
 %build
-# NOTE: not autoconf based configure
-./configure \
+%{__aclocal}
+%{__autoconf}
+%configure \
 	--verbose \
 	--prefix=%{_prefix} \
+	--with-boost-libdir=%{_libdir} \
 	%{?with_qsa:--with-qtsingleapplication=system}
 
 %{__make} \

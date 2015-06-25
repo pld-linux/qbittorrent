@@ -1,0 +1,17 @@
+--- qbittorrent-3.2.0/m4/qbittorrent.m4~	2015-05-10 03:31:33.000000000 +0200
++++ qbittorrent-3.2.0/m4/qbittorrent.m4	2015-06-25 09:55:58.292190284 +0200
+@@ -12,10 +12,10 @@
+                                 [QT_QMAKE=`AS_DIRNAME(["$QT_QMAKE"])`])
+                  ])
+ 
+-AC_CHECK_FILE([$QT_QMAKE/qmake],
+-              [QT_QMAKE="$QT_QMAKE/qmake"],
+-              [AC_CHECK_FILE([$QT_QMAKE/qmake-qt4],
+-                             [QT_QMAKE="$QT_QMAKE/qmake-qt4"],
++AC_CHECK_FILE([$QT_QMAKE/qmake-qt4],
++              [QT_QMAKE="$QT_QMAKE/qmake-qt4"],
++              [AC_CHECK_FILE([$QT_QMAKE/qmake],
++                             [QT_QMAKE="$QT_QMAKE/qmake"],
+                              [QT_QMAKE=""])
+               ])
+ 
