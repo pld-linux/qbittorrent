@@ -3,16 +3,17 @@
 %bcond_without	qsa		# build with bundled QtSingleApplication
 
 %define		qtver	4.5
+%define		rasterbar_ver	1:1.0.6
 Summary:	qbittorrent - Qt4-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt4-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt4
 Name:		qbittorrent
-Version:	3.2.0
+Version:	3.2.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	e058c999877317da3cc30d86782b0f54
+# Source0-md5:	1066ab02d28204d5183cff0111617859
 Patch0:		lang-hu-2.3.0.patch
 Patch1:		qmake.patch
 URL:		http://qbittorrent.sourceforge.net/
@@ -26,7 +27,7 @@ BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	libnotify-devel >= 0.4.2
-BuildRequires:	libtorrent-rasterbar-devel >= 1:1.0.0
+BuildRequires:	libtorrent-rasterbar-devel >= %{rasterbar_ver}
 BuildRequires:	pkgconfig
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-linguist >= %{qtver}
@@ -34,6 +35,9 @@ BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
 Requires:	desktop-file-utils
+Requires:	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
+Requires:	libtorrent-rasterbar >= %{rasterbar_ver}
 Requires:	python >= 1:2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -77,6 +81,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_desktop_database
+%update_icon_cache hicolor
+
+%postun
+%update_desktop_database
+%update_icon_cache hicolor
 
 %files
 %defattr(644,root,root,755)
