@@ -2,8 +2,8 @@
 # Conditional build:
 %bcond_without	qsa		# build with bundled QtSingleApplication
 
-%define		qtver	5.5
-%define		rasterbar_ver	1:1.1.3
+%define		qtver	5.7
+%define		rasterbar_ver	2:1.0.11
 Summary:	qbittorrent - Qt-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt
@@ -23,7 +23,7 @@ BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
-%{?with_qsa:BuildRequires:	Qt5SingleApplication-devel >= 2.6-5}
+%{?with_qsa:BuildRequires:	Qt5SingleApplication-devel >= 2.6.1-4}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.36.0

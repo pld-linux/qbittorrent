@@ -15,3 +15,18 @@
                               [QT_QMAKE=""])
                ])
  
+@@ -36,10 +36,10 @@
+                                 [host_bins])
+                  ])
+ 
+-AC_CHECK_FILE([$QT_QMAKE/qmake],
+-              [QT_QMAKE="$QT_QMAKE/qmake"],
+-              [AC_CHECK_FILE([$QT_QMAKE/qmake-qt5],
+-                             [QT_QMAKE="$QT_QMAKE/qmake-qt5"],
++AC_CHECK_FILE([$QT_QMAKE/qmake-qt5],
++              [QT_QMAKE="$QT_QMAKE/qmake-qt5"],
++              [AC_CHECK_FILE([$QT_QMAKE/qmake],
++                             [QT_QMAKE="$QT_QMAKE/qmake"],
+                              [QT_QMAKE=""])
+               ])
+ 
