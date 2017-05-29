@@ -1,16 +1,16 @@
---- qbittorrent-3.2.0/m4/qbittorrent.m4~	2015-05-10 03:31:33.000000000 +0200
-+++ qbittorrent-3.2.0/m4/qbittorrent.m4	2015-06-25 09:55:58.292190284 +0200
+--- qbittorrent-3.3.11/m4/qbittorrent.m4.orig	2017-05-29 09:55:47.560076042 +0200
++++ qbittorrent-3.3.11/m4/qbittorrent.m4	2017-05-29 09:57:34.790498191 +0200
 @@ -12,10 +12,10 @@
                                  [QT_QMAKE=`AS_DIRNAME(["$QT_QMAKE"])`])
                   ])
  
--AC_CHECK_FILE([$QT_QMAKE/qmake],
+-AS_IF([test -f "$QT_QMAKE/qmake"],
 -              [QT_QMAKE="$QT_QMAKE/qmake"],
--              [AC_CHECK_FILE([$QT_QMAKE/qmake-qt4],
+-              [AS_IF([test -f "$QT_QMAKE/qmake-qt4"],
 -                             [QT_QMAKE="$QT_QMAKE/qmake-qt4"],
-+AC_CHECK_FILE([$QT_QMAKE/qmake-qt4],
++AS_IF([test -f "$QT_QMAKE/qmake-qt4"],
 +              [QT_QMAKE="$QT_QMAKE/qmake-qt4"],
-+              [AC_CHECK_FILE([$QT_QMAKE/qmake],
++              [AS_IF([test -f "$QT_QMAKE/qmake"],
 +                             [QT_QMAKE="$QT_QMAKE/qmake"],
                               [QT_QMAKE=""])
                ])
@@ -19,13 +19,13 @@
                                  [host_bins])
                   ])
  
--AC_CHECK_FILE([$QT_QMAKE/qmake],
+-AS_IF([test -f "$QT_QMAKE/qmake"],
 -              [QT_QMAKE="$QT_QMAKE/qmake"],
--              [AC_CHECK_FILE([$QT_QMAKE/qmake-qt5],
+-              [AS_IF([test -f "$QT_QMAKE/qmake-qt5"],
 -                             [QT_QMAKE="$QT_QMAKE/qmake-qt5"],
-+AC_CHECK_FILE([$QT_QMAKE/qmake-qt5],
++AS_IF([test -f "$QT_QMAKE/qmake-qt5"],
 +              [QT_QMAKE="$QT_QMAKE/qmake-qt5"],
-+              [AC_CHECK_FILE([$QT_QMAKE/qmake],
++              [AS_IF([test -f "$QT_QMAKE/qmake"],
 +                             [QT_QMAKE="$QT_QMAKE/qmake"],
                               [QT_QMAKE=""])
                ])

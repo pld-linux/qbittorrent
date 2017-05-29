@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	qsa		# build with bundled QtSingleApplication
+%bcond_with	qsa		# build with bundled QtSingleApplication
 
 %define		qtver	5.7
 %define		rasterbar_ver	2:1.0.11
@@ -8,12 +8,12 @@ Summary:	qbittorrent - Qt-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt
 Name:		qbittorrent
-Version:	3.3.10
+Version:	3.3.11
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.xz
-# Source0-md5:	47497bf0fb27ad54efde2bcd5c549e5b
+# Source0-md5:	c0b23cc43bb99cf2bf51a2e4d4f6d926
 Patch1:		qmake.patch
 URL:		http://qbittorrent.sourceforge.net/
 BuildConflicts:	libtorrent-rasterbar >= 2:1.1
@@ -94,5 +94,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/appdata/qBittorrent.appdata.xml
 %{_mandir}/man1/qbittorrent.1*
 %{_iconsdir}/hicolor/*/apps/qbittorrent.png
+%{_iconsdir}/hicolor/*x*/status/qbittorrent-tray.png
 %{_desktopdir}/qBittorrent.desktop
 %{_pixmapsdir}/qbittorrent.png
