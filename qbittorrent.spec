@@ -1,22 +1,20 @@
 #
 # Conditional build:
-%bcond_with	qsa		# build with bundled QtSingleApplication
+%bcond_with	qsa		# system QtSingleApplication
 
 %define		qtver	5.7
-%define		rasterbar_ver	2:1.0.11
+%define		rasterbar_ver	2:1.1.10
 Summary:	qbittorrent - Qt-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt
 Name:		qbittorrent
-Version:	3.3.11
+Version:	4.1.5
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.xz
-# Source0-md5:	c0b23cc43bb99cf2bf51a2e4d4f6d926
-Patch1:		qmake.patch
+# Source0-md5:	4650cc8bcf5149de2785b07a5ade7d2c
 URL:		http://qbittorrent.sourceforge.net/
-BuildConflicts:	libtorrent-rasterbar >= 2:1.1
 BuildRequires:	GeoIP-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -28,13 +26,17 @@ BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	libnotify-devel >= 0.4.2
+BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtorrent-rasterbar-devel >= %{rasterbar_ver}
-BuildRequires:	pkgconfig
+# not ready yet
+BuildRequires:	libtorrent-rasterbar-devel < 2:1.2.0
+BuildRequires:	pkgconfig >= 1:0.23
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	qt5-linguist >= %{qtver}
 BuildRequires:	qt5-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	which
+BuildRequires:	zlib >= 1.2.5.2
 Requires:	desktop-file-utils
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
@@ -53,10 +55,9 @@ qTorrent - graficzny klient torrenta oparty na Qt.
 
 %prep
 %setup -q
-%patch1 -p1
 
 %if %{with qsa}
-#%{__rm} -r src/qtsingleapp
+%{__rm} -r src/app/qtsingleapplication
 %endif
 
 %build
@@ -91,9 +92,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS AUTHORS TODO Changelog
 %attr(755,root,root) %{_bindir}/qbittorrent
-%{_datadir}/appdata/qBittorrent.appdata.xml
+%{_datadir}/appdata/qbittorrent.appdata.xml
 %{_mandir}/man1/qbittorrent.1*
-%{_iconsdir}/hicolor/*/apps/qbittorrent.png
+%{_iconsdir}/hicolor/*x*/apps/qbittorrent.png
 %{_iconsdir}/hicolor/*x*/status/qbittorrent-tray.png
-%{_desktopdir}/qBittorrent.desktop
+%{_iconsdir}/hicolor/scalable/status/qbittorrent-tray*.svg
+%{_desktopdir}/qbittorrent.desktop
 %{_pixmapsdir}/qbittorrent.png
