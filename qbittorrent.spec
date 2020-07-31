@@ -8,12 +8,12 @@ Summary:	qbittorrent - Qt-based torrent client
 Summary(hu.UTF-8):	qbittorrent - Qt-alapú torrent kliens
 Summary(pl.UTF-8):	qbittorrent - graficzny klient torrenta oparty na Qt
 Name:		qbittorrent
-Version:	4.1.5
+Version:	4.2.5
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/qbittorrent/%{name}-%{version}.tar.xz
-# Source0-md5:	4650cc8bcf5149de2785b07a5ade7d2c
+# Source0-md5:	e272971ed6f1a82d05e0240d48d08f88
 URL:		http://qbittorrent.sourceforge.net/
 BuildRequires:	GeoIP-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -24,12 +24,13 @@ BuildRequires:	Qt5Network-devel >= %{qtver}
 %{?with_qsa:BuildRequires:	Qt5SingleApplication-devel >= 2.6.1-4}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
-BuildRequires:	boost-devel >= 1.36.0
+BuildRequires:	boost-devel >= 1.40
 BuildRequires:	libnotify-devel >= 0.4.2
-BuildRequires:	libstdc++-devel >= 6:4.7
+BuildRequires:	libstdc++-devel >= 6:5
 BuildRequires:	libtorrent-rasterbar-devel >= %{rasterbar_ver}
 # not ready yet
-BuildRequires:	libtorrent-rasterbar-devel < 2:1.2.0
+BuildRequires:	libtorrent-rasterbar-devel < 2:1.3.0
+BuildRequires:	openssl-devel >= 1.0
 BuildRequires:	pkgconfig >= 1:0.23
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	qt5-linguist >= %{qtver}
@@ -92,10 +93,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS AUTHORS TODO Changelog
 %attr(755,root,root) %{_bindir}/qbittorrent
-%{_datadir}/appdata/qbittorrent.appdata.xml
+%{_datadir}/metainfo/org.qbittorrent.qBittorrent.appdata.xml
 %{_mandir}/man1/qbittorrent.1*
+%{_desktopdir}/org.qbittorrent.qBittorrent.desktop
 %{_iconsdir}/hicolor/*x*/apps/qbittorrent.png
 %{_iconsdir}/hicolor/*x*/status/qbittorrent-tray.png
 %{_iconsdir}/hicolor/scalable/status/qbittorrent-tray*.svg
-%{_desktopdir}/qbittorrent.desktop
 %{_pixmapsdir}/qbittorrent.png
