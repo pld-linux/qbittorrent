@@ -1,7 +1,3 @@
-#
-# Conditional build:
-%bcond_with	qsa		# system QtSingleApplication
-
 %define		qtver	5.15.2
 %define		rasterbar_ver	2:2.0.9
 Summary:	qbittorrent - Qt-based torrent client
@@ -21,7 +17,6 @@ BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
-%{?with_qsa:BuildRequires:	Qt5SingleApplication-devel >= 2.6.1-4}
 BuildRequires:	Qt5Sql-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
@@ -56,18 +51,13 @@ qTorrent - graficzny klient torrenta oparty na Qt.
 %prep
 %setup -q
 
-%if %{with qsa}
-%{__rm} -r src/app/qtsingleapplication
-%endif
-
 %build
 %{__aclocal}
 %{__autoconf}
 %configure \
 	--verbose \
 	--prefix=%{_prefix} \
-	--with-boost-libdir=%{_libdir} \
-	%{?with_qsa:--with-qtsingleapplication=system}
+	--with-boost-libdir=%{_libdir}
 
 %{__make} \
 	CXX="%{__cxx}"
